@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Lógica de Programação</title>
+</head>
+<body>
+    <h1>Lógica de programação com JavaScript</h1>
+
+    <script>
+        var jogador1 = parseInt(prompt('Jogador 1, escolha um número: '));
+        var jogador2 = parseInt(prompt('Jogador 2, escolha um número: '));
+
+        if (jogador1 == jogador2) {
+            alert('EMPATE! Fim de jogo, os jogadores escolheram os mesmos números.');
+        } else {
+            var sorteado = parseInt(Math.random() * 2);
+
+            if (sorteado == 0) {
+                if (jogador1 < jogador2) {
+                    alert('O número sorteado foi ' + sorteado + ', então, o JOGADOR 1 É O CAMPEÃO!');
+                } else {
+                    alert('O número sorteado foi ' + sorteado + ', então, o JOGADOR 2 É O CAMPEÃO!');
+                }
+            } else {
+                if (jogador1 > jogador2) {
+                    alert('O número sorteado foi ' + sorteado + ', então, o JOGADOR 1 É O CAMPEÃO!');
+                } else {
+                    alert('O número sorteado foi ' + sorteado + ', então, o JOGADOR 2 É O CAMPEÃO!');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
