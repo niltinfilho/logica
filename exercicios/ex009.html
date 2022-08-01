@@ -18,15 +18,41 @@
 
     <script>
         let num = Number(prompt('Digite um número: '))
-        let output = document.querySelector('div#output')
-        // let msg = ''
+        
+        mostrar()
+
+        function mostrar() {
+            let output = document.querySelector('div#output')
+            output.innerHTML = num
+        }
 
         function somar() {
             let soma = Number(prompt('Digite um número para somar: '))
-            num = num + soma
+            num += soma
+
+            mostrar()
         }
 
-        output.innerHTML = num
+        function subtrair() {
+            let sub = Number(prompt('Digite um número para subtrair: '))
+            num -= sub
+
+            mostrar()
+        }
+
+        function multiplicar() {
+            let mult = Number(prompt('Digite um número para multiplicar: '))
+            num *= mult
+
+            mostrar()
+        }
+
+        function dividir() {
+            let div = Number(prompt('Digite um número para dividir: '))
+            num /= div
+
+            mostrar()
+        }
     </script>
 </body>
 </html>

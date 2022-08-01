@@ -15,17 +15,15 @@
 <body>
     <h1>Lógica de programação com JavaScript</h1>
 
-    <div id="output">sddsas</div>
+    <button onclick="mostrarArea(largura, altura)">Mostrar área</button>
 
     <script>
-        let output = document.querySelector('div#output')
+        let largura = Number(prompt('Digite a largura: '))
+        let altura = Number(prompt('Digite a altura: '))
 
-        let msg = ''
-        for(let i = 0; i < 1001; i++) {
-            msg += 'i: ' + i + '<br>'
+        function mostrarArea() {
+            alert(`A área total é de: ${largura * altura}`) // Passando parâmetros direto do botão
         }
-
-        output.innerHTML = msg
     </script>
 </body>
 </html>
