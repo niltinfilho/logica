@@ -9,21 +9,24 @@
 <body>
     <h1>Lógica de programação com JavaScript</h1>
 
-    <button onclick="somar"> + </button>
-    <button onclick="subtrair"> - </button>
-    <button onclick="multiplicar"> * </button>
-    <button onclick="dividir"> / </button>
+    <button onclick="somar()"> + </button>
+    <button onclick="subtrair()"> - </button>
+    <button onclick="multiplicar()"> * </button>
+    <button onclick="dividir()"> / </button>
 
     <div id="output"></div>
 
     <script>
         let num = Number(prompt('Digite um número: '))
         let output = document.querySelector('div#output')
-        let msg = ''
+        // let msg = ''
 
-        
+        function somar() {
+            let soma = Number(prompt('Digite um número para somar: '))
+            num = num + soma
+        }
 
-        output.innerHTML = msg
+        output.innerHTML = num
     </script>
 </body>
 </html>
