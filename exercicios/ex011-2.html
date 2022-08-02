@@ -17,22 +17,44 @@
     <div id="output"></div>
 
     <script>
-        let n1 = Number(prompt('Digite um número:'))
+        var n1 = Number(prompt('Digite um número:'))
 
-        mostrar()
+        mostrar(n1)
 
         function mostrar() {
-            let output = document.querySelector('#output').innerHTML = n1
+            document.querySelector('#output').innerHTML = n1
         }
 
         function iniciarCalculo(operacao) {
-            let n2 = document.querySelector('#output').textContent
+            var n2 = document.querySelector('#output').textContent
             
-            let n1 = Number(prompt('Digite outro número:'))
+            var n3 = Number(prompt('Digite outro número:'))
+
+            var msg = calcular(operacao, n1, n2)
+
+            mostrar(msg)
         }
-        document.write(n2)
-        document.write(n1)
-        document.write(n1 + n2)
+
+        function calcular(operacao, n1, n2) {
+            var resultado = null
+
+            switch(operacao) {
+                case '+':
+                    resultado = n3 + n2
+                    break
+                case '-':
+                    resultado = n3 - n2
+                    break
+                case '*':
+                    resultado = n3 * n2
+                    break
+                case '/':
+                    resultado = n3 / n2
+                    break
+            }
+            
+            return resultado
+        }
     </script>
 </body>
 </html>
