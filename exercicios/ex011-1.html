@@ -9,52 +9,41 @@
 <body>
     <h1>Lógica de programação com JavaScript</h1>
 
-    <button onclick="iniciarCalculo('+')"> + </button>
-    <button onclick="iniciarCalculo('-')"> - </button>
-    <button onclick="iniciarCalculo('*')"> * </button>
-    <button onclick="iniciarCalculo('/')"> / </button>
+    <button onclick="calcular('+')"> + </button>
+    <button onclick="calcular('-')"> - </button>
+    <button onclick="calcular('*')"> * </button>
+    <button onclick="calcular('/')"> / </button>
 
     <div id="output"></div>
 
     <script>
-        let n2 = Number(prompt('Digite um número: '))
+        let num = Number(prompt('Digite um número: '))
         
-        mostrar(n2)
+        mostrar()
 
-        function iniciarCalculo(simbolo) {
-            let n1 = Number(document.querySelector('#output').textContent)
-
-            let n2 = Number(prompt('Digite outro número: '))
-
-            let msg = calcular(simbolo, n1, n2)
-
-            mostrar(msg)
-        }
-
-        function mostrar(mensagem) {
+        function mostrar() {
             let output = document.querySelector('div#output')
-            output.innerHTML = mensagem
+            output.innerHTML = num
         }
 
-        function calcular(simbolo, n1, n2) {
-
-            let numeroCalculado = null
+        function calcular(operacao) {
+            let operador = Number(prompt('Digite outro número: '))
             
-            switch(simbolo) {
+            switch(operacao) {
                 case '+':
-                    numeroCalculado = n1 + n2
+                    num += operador
                     break
                 case '-':
-                    numeroCalculado = n1 - n2
+                    num -= operador
                     break
                 case '*':
-                    numeroCalculado = n1 * n2
+                    num *= operador
                     break
                 case '/':
-                    numeroCalculado = n1 / n2
+                    num /= operador
             }
 
-            return numeroCalculado
+            mostrar()
         }
     </script>
 </body>
