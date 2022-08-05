@@ -9,33 +9,51 @@
 <body>
     <h1>Lógica de programação com JavaScript</h1>
 
-    <button onclick="fazerCalculo('+')"> + </button>
-    <button onclick="fazerCalculo('-')"> - </button>
-    <button onclick="fazerCalculo('*')"> * </button>
-    <button onclick="fazerCalculo('/')"> / </button>
+    <button onclick="iniciarCalculo('+')"> + </button>
+    <button onclick="iniciarCalculo('-')"> - </button>
+    <button onclick="iniciarCalculo('*')"> * </button>
+    <button onclick="iniciarCalculo('/')"> / </button>
 
     <div id="output"></div>
 
     <script>
-        var numEscolhido = Number(prompt('Digite um número:'))
+        let num = Number(prompt('Digite um número:'))
+        
+        mostrar(num)
 
-        exibir(numEscolhido)
+        function iniciarCalculo(simbolo) {
+            let n = document.querySelector('#output').textContent
+            let n1 = Number(n)
+            let n2 = Number(prompt('Digite outro número:'))
 
-        fazerCalculo()
-
-        function exibir(mensagem) {
-            document.querySelector('#output').innerHTML = mensagem
+            let res = calcular(simbolo, n1, n2)
+            mostrar(res)
         }
 
-        function fazerCalculo(operacao, num1, num2) {
-            var num1 = document.querySelector('#output').textContent
-
-            var num2 = Number(prompt('Digite outro número:'))
-
-            return num1 + num2
+        function mostrar(numero) {
+            let output = document.querySelector('div#output')
+            output.innerHTML = numero
         }
 
-        function calcular() {}
+        function calcular(operacao, n1, n2) {
+
+            let resultado = null
+            
+            switch(operacao) {
+                case '+':
+                    resultado = n1 + n2
+                    break
+                case '-':
+                    resultado = n1 - n2
+                    break
+                case '*':
+                    resultado = n1 * n2
+                    break
+                case '/':
+                    resultado = n1 / n2
+            }
+            return resultado
+        }
     </script>
 </body>
 </html>
